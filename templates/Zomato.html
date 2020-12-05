@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Zomato Restaurants Rating</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+</head>
+<body>
+<img src=
+"https://seeklogo.com/images/Z/zomato-logo-AD6823E433-seeklogo.com.png"
+         alt="zomato image", width="400", height="150", style="float:left">
+
+<img src=
+https://officechai.com/wp-content/uploads/2015/09/zomato-logo-600x399.jpg"
+         alt="zomato image", width="200", height="70", style="float:right">
+
+
+</body>
+
+<style>
+body {
+  background-image: url("https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?cs=srgb&dl=pexels-ella-olsson-1640777.jpg&fm=jpg");
+  background-position: 200%;
+  background-size: cover;
+}
+</style>
+<div class="login">
+
+<h1 style="color:firebrick;" ">Predict Zomato Restaurant Ratings  </h1>
+
+    <!-- Main Input For Receiving Query to our ML -->
+
+    <form action="{{ url_for('predict')}}"method="post">
+        <input type="text" name="Online Order" placeholder="Order Online" required="required" />
+        <br>
+        <input type="text" name="Book Table" placeholder="Book Table" required="required" />
+        <br>
+        <input type="text" name="Votes" placeholder="Votes" required="required" />
+        <br>
+        <input type="text" name="Location" placeholder="Location" required="required" />
+        <br>
+        <input type="text" name="Restaurant Type" placeholder="Restaurant Type" required="required" />
+        <br>
+        <input type="text" name="Cuisines" placeholder="Cuisines" required="required" />
+        <br>
+        <input type="text" name="Cost" placeholder="Cost" required="required" />
+        <br>
+        <input type="text" name="Menu Item" placeholder="Menu Item" required="required" />
+
+        <br>
+
+        <button style="background-color:red; border-color:blue; type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+
+
+    </form>
+
+   {{ prediction_text }}
+
+
+</div>
+
+</html>
