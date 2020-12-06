@@ -7,7 +7,7 @@ from sklearn.model_selection import train_test_split
 import warnings
 warnings.filterwarnings('ignore')
 
-df=pd.read_csv('Zomato_df.csv')
+df=pd.read_csv('deploy_df')
 df.drop('Unnamed: 0',axis=1,inplace=True)
 print(df.head())
 x=df.drop('rate',axis=1)
